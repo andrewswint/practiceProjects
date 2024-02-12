@@ -1,5 +1,6 @@
 package emailApp;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Email {
@@ -20,6 +21,10 @@ public class Email {
 //		Call a method asking for a department
 		this.department = setDepartment();
 		System.out.println("Department set to " + this.department);
+		
+//		Call method to set random password
+		this.password = randomPassword(8);
+		System.out.println("Your password is : " + this.password);
 	}
 
 //	Ask for the department
@@ -48,6 +53,18 @@ public class Email {
 	}
 
 //	Generate a random password
+	private String randomPassword(int length) {
+		String passwordSet = "ABCDREFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%";
+		char[] password = new char[length];
+		for (int i = 0; i < length; i++) {
+			Random rand = new Random();
+
+			// Generate random integers in range 0 to 999
+			int random = rand.nextInt(passwordSet.length());
+			password[i] = passwordSet.charAt(random);
+		}
+		return new String(password);
+	}
 
 //	Set the mailbox capacity
 
