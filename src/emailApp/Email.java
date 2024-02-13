@@ -9,6 +9,7 @@ public class Email {
 	private String lastName;
 	private String password;
 	private String department;
+	private String email;
 	private int mailboxCapacity;
 	private String alternateEmail;
 
@@ -25,6 +26,10 @@ public class Email {
 //		Call method to set random password
 		this.password = randomPassword(8);
 		System.out.println("Your password is : " + this.password);
+
+//		Combine elements to generate email
+		email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + ".com";
+		System.out.println("Your email is " + email);
 	}
 
 //	Ask for the department
@@ -45,7 +50,7 @@ public class Email {
 			return "Accounting";
 		} else if (response == 0) {
 			sc.close();
-			return "None";
+			return "";
 		} else {
 			sc.close();
 			return "";
