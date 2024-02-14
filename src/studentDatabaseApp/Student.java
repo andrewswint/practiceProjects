@@ -26,7 +26,6 @@ public class Student {
 		this.gradeYear = sc.nextInt();
 
 		setStudentId();
-		System.out.println("Student ID is: " + studentId);
 	}
 
 //	Generate an ID
@@ -48,25 +47,27 @@ public class Student {
 				break;
 			}
 		} while (true);
-		System.out.println("Enrolled in " + courses);
-		System.out.println("Tuition balance is " + tuitionBalance);
 	}
 
 //	View balance
 	public void viewBalance() {
-		System.out.println("Your balance is " + tuitionBalance);
+		System.out.println("Your balance is: $" + tuitionBalance);
 	}
 
 //	Pay tuition
 	public void payTuition() {
-		System.out.print("What is your tuition payment: ");
+		System.out.println("Tuition balance is: $" + tuitionBalance);
+		System.out.print("Enter your tuition payment amount: $");
 		Scanner sc = new Scanner(System.in);
 		int payment = sc.nextInt();
 		tuitionBalance = tuitionBalance - payment;
-		System.out.println("Your payment was " + payment);
 		viewBalance();
 	}
 
 //	Show status
+	public String showInfo() {
+		return "First name: " + firstName + "\nLast name: " + lastName + "\nStudent ID: " + studentId
+				+ "\nEnrolled in: " + courses + "\nTuition balance: $" + tuitionBalance;
+	}
 
 }
