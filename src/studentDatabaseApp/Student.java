@@ -16,16 +16,14 @@ public class Student {
 //	Constructor: Prompt user to enter name and year
 	public Student() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter students first name: ");
+		System.out.print("Enter students first name: ");
 		this.firstName = sc.nextLine();
 
-		System.out.println("Enter students last name: ");
+		System.out.print("Enter students last name: ");
 		this.lastName = sc.nextLine();
 
-		System.out.println("1-Freshmen\n2-Sophmore\n3-Junior\n4-Senior\nEnter student year: ");
+		System.out.print("1-Freshmen\n2-Sophmore\n3-Junior\n4-Senior\nEnter student year: ");
 		this.gradeYear = sc.nextInt();
-
-		System.out.println(firstName + " " + lastName + " " + "is in " + gradeYear);
 
 		setStudentId();
 		System.out.println("Student ID is: " + studentId);
@@ -40,7 +38,7 @@ public class Student {
 //	Enroll in courses
 	public void enroll() {
 		do {
-			System.out.println("Enter crouse to enroll (Q to quit): ");
+			System.out.print("Enter crouse to enroll (Q to quit): ");
 			Scanner sc = new Scanner(System.in);
 			String course = sc.nextLine();
 			if (!course.equalsIgnoreCase("Q")) {
@@ -55,8 +53,19 @@ public class Student {
 	}
 
 //	View balance
+	public void viewBalance() {
+		System.out.println("Your balance is " + tuitionBalance);
+	}
 
 //	Pay tuition
+	public void payTuition() {
+		System.out.print("What is your tuition payment: ");
+		Scanner sc = new Scanner(System.in);
+		int payment = sc.nextInt();
+		tuitionBalance = tuitionBalance - payment;
+		System.out.println("Your payment was " + payment);
+		viewBalance();
+	}
 
 //	Show status
 
