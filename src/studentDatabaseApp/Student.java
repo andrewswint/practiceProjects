@@ -41,7 +41,7 @@ public class Student {
 			Scanner sc = new Scanner(System.in);
 			String course = sc.nextLine();
 			if (!course.equalsIgnoreCase("Q")) {
-				this.courses = courses + "\n" + course;
+				this.courses = courses + "\n	" + course;
 				this.tuitionBalance = tuitionBalance + costOfCourse;
 			} else {
 				break;
@@ -66,8 +66,8 @@ public class Student {
 
 //	Show status
 	public String showInfo() {
-		return "First name: " + firstName + "\nLast name: " + lastName + "\nStudent ID: " + studentId
-				+ "\nEnrolled in: " + courses + "\nTuition balance: $" + tuitionBalance;
+		return "Name: " + firstName + " " + lastName + "\nStudent ID: " + studentId + "\nEnrolled in: " + courses
+				+ "\nTuition balance: $" + tuitionBalance;
 	}
 
 }
